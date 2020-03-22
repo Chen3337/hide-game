@@ -21,6 +21,14 @@ class Game extends Component {
             var clientY = ev.touches[0].clientY;
             this.setState({ x: clientX , y: clientY });
         }, { passive: false });
+        window.addEventListener('touchstart', ev => {
+            ev.preventDefault();
+            ev.stopImmediatePropagation();
+        }, { passive: false });
+        window.addEventListener('touchforcechange', ev => {
+            ev.preventDefault();
+            ev.stopImmediatePropagation();
+        }, { passive: false });
         this.setState({ context: context });
         requestAnimationFrame(() => { this.update() });
     }
