@@ -19,7 +19,9 @@ class Game extends Component {
             ev.stopImmediatePropagation();
             var clientX = ev.touches[0].clientX;
             var clientY = ev.touches[0].clientY;
-            this.setState({ x: clientX , y: clientY });
+            if (10 > Math.sqrt((this.state.x - clientX)*(this.state.x - clientX) + (this.state.y - clientY)*(this.state.y - clientY))) {
+                this.setState({ x: clientX , y: clientY });
+            }
         }, { passive: false });
         window.addEventListener('touchstart', ev => {
             ev.preventDefault();
