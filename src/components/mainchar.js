@@ -10,7 +10,7 @@ class MainChar {
         context.save();
         context.translate(state.x, state.y);
         context.beginPath();
-        context.arc(0, 0, 10, 0, 2 * Math.PI);
+        context.arc(0, 0, 12, 0, 2 * Math.PI);
         context.fillStyle = "green";
         context.fill();
         context.closePath();

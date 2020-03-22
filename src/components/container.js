@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Mainchar from './mainchar';
+import Shooter from './shooter';
 class Game extends Component {
     constructor() {
         super();
@@ -7,9 +8,10 @@ class Game extends Component {
             screenWidth: window.innerWidth,
             screenHeight: window.innerHeight,
             context: null,
-            x: 100,
-            y: 100,
+            x: window.innerWidth / 2,
+            y: window.innerHeight - 30,
             mainchar: new Mainchar(),
+            shootertank: new Shooter(),
         }
     }
     componentDidMount() {
@@ -37,8 +39,8 @@ class Game extends Component {
     update = () => {
         if (this.state.context) {
             this.state.context.clearRect(0, 0, this.state.screenWidth, this.state.screenHeight);
-            console.log(this.state.x + " " + this.state.y);
             this.state.mainchar.render(this.state);
+            this.state.shootertank.render(this.state);
 
         }
         requestAnimationFrame(() => { this.update() });
