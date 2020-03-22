@@ -47,7 +47,7 @@ class Game extends Component {
                 <canvas ref="canvas"
                     width={this.state.screenWidth}
                     height={this.state.screenHeight}
-                    style={{backgroundColor: "red"}}
+                    style={{ backgroundColor: "skyblue" }}
                 />
             </div>
         );
