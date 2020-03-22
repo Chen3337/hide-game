@@ -7,8 +7,8 @@ class Game extends Component {
             screenWidth: window.innerWidth,
             screenHeight: window.innerHeight,
             context: null,
-            x: 0,
-            y: 0,
+            x: 100,
+            y: 100,
             mainchar: new Mainchar(),
         }
     }
@@ -19,7 +19,7 @@ class Game extends Component {
             ev.stopImmediatePropagation();
             var clientX = ev.touches[0].clientX;
             var clientY = ev.touches[0].clientY;
-            if (10 > Math.sqrt((this.state.x - clientX)*(this.state.x - clientX) + (this.state.y - clientY)*(this.state.y - clientY))) {
+            if (20 > Math.sqrt((this.state.x - clientX)*(this.state.x - clientX) + (this.state.y - clientY)*(this.state.y - clientY))) {
                 this.setState({ x: clientX , y: clientY });
             }
         }, { passive: false });
