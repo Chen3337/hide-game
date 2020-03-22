@@ -15,11 +15,12 @@ class Game extends Component {
     componentDidMount() {
         const context = this.refs.canvas.getContext('2d');
         window.addEventListener('touchmove', ev => {
-            if (weShouldStopDefaultScrollAndZoom) {
-              ev.preventDefault();
-              ev.stopImmediatePropagation();
-            };
-          }, { passive: false });
+            ev.preventDefault();
+            ev.stopImmediatePropagation();
+            var clientX = ev.touches[0].clientX;
+            var clientY = ev.touches[0].clientY;
+            this.setState({ x: clientX , y: clientY });
+        }, { passive: false });
         this.setState({ context: context });
         requestAnimationFrame(() => { this.update() });
     }
@@ -32,12 +33,9 @@ class Game extends Component {
         }
         requestAnimationFrame(() => { this.update() });
     }
-    _onMouseMove(e) {
-        this.setState({ x: e.screenX, y: e.screenY });
-    }
     render() {
         return (
-            <div onMouseMove={this._onMouseMove.bind(this)} >
+            <div >
                 <canvas ref="canvas"
                     width={this.state.screenWidth}
                     height={this.state.screenHeight}
