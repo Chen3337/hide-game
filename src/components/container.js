@@ -26,7 +26,7 @@ class Game extends Component {
             ev.stopImmediatePropagation();
             var clientX = ev.touches[0].clientX;
             var clientY = ev.touches[0].clientY;
-            if(clientY > this.state.screenHeight || clientY < 30 || clientX > this.state.screenWidth || clientX < 0){
+            if(clientY > this.state.screenHeight || clientY < 70 || clientX > this.state.screenWidth || clientX < 0){
             }
             else{
                 if (25 > Math.sqrt((this.state.x - clientX) * (this.state.x - clientX) + (this.state.y - clientY) * (this.state.y - clientY))) {
@@ -81,6 +81,19 @@ class Game extends Component {
         var bullet = new Bullet(this.state.shootertank.degrees * Math.PI / 180);
         var joined = this.state.bullet.concat(bullet);
         this.setState({ bullet: joined });
+    }
+    componentWillUnmount() {
+        this.setState({
+            context: null,
+            x: window.innerWidth / 2,
+            y: window.innerHeight - 60,
+            mainchar: new Mainchar(),
+            shootertank: new Shooter(),
+            bullet: [],
+            timer: null,
+            scoreTime: 0,
+            scoreTimer: null,
+        })
     }
     render() {
         return (
