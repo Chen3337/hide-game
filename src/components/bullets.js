@@ -8,7 +8,7 @@ class Bullet {
         this.bounceY = false;
     }
     hit(state) {
-        if (15 > Math.sqrt((state.x - this.x) * (state.x - this.x) + (state.y - this.y) * (state.y - this.y))) {
+        if (15 > Math.sqrt((state.x - this.x) * (state.x - this.x) + (state.y-30 - this.y) * (state.y-30 - this.y))) {
             return true;
         }
         return false;
