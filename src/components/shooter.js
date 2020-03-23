@@ -1,5 +1,5 @@
 
-class MainChar {
+class Shooter {
     constructor() {
         this.degrees = 0;
         this.direction = 'add';
@@ -8,13 +8,13 @@ class MainChar {
     render(state) {
         if(this.direction === 'add'){
             this.degrees += 1;
-            if(this.degrees === 90){
+            if(this.degrees === 85){
                 this.direction = 'minus';
             }
         }
         if(this.direction === 'minus'){
             this.degrees -= 1;
-            if(this.degrees === -90){
+            if(this.degrees === -85){
                 this.direction = 'add';
             }
         }
@@ -35,4 +35,4 @@ class MainChar {
         context.restore();
     }
 }
-export default MainChar
+export default Shooter
