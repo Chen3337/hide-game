@@ -7,14 +7,16 @@ class Game extends Component {
         super();
         this.state = {
             screenWidth: window.innerWidth,
-            screenHeight: window.innerHeight,
+            screenHeight: window.innerHeight -30,
             context: null,
             x: window.innerWidth / 2,
-            y: window.innerHeight - 30,
+            y: window.innerHeight - 60,
             mainchar: new Mainchar(),
             shootertank: new Shooter(),
             bullet: [],
             timer: null,
+            scoreTime: 0,
+            scoreTimer: null,
         }
     }
     componentDidMount() {
@@ -24,8 +26,12 @@ class Game extends Component {
             ev.stopImmediatePropagation();
             var clientX = ev.touches[0].clientX;
             var clientY = ev.touches[0].clientY;
-            if (25 > Math.sqrt((this.state.x - clientX) * (this.state.x - clientX) + (this.state.y - clientY) * (this.state.y - clientY))) {
-                this.setState({ x: clientX, y: clientY });
+            if(clientY > this.state.screenHeight || clientY < 0 || clientX > this.state.screenWidth || clientX < 0){
+            }
+            else{
+                if (25 > Math.sqrt((this.state.x - clientX) * (this.state.x - clientX) + (this.state.y - clientY) * (this.state.y - clientY))) {
+                    this.setState({ x: clientX, y: clientY });
+                }
             }
         }, { passive: false });
         window.addEventListener('touchstart', ev => {
@@ -36,7 +42,13 @@ class Game extends Component {
             ev.preventDefault();
             ev.stopImmediatePropagation();
         }, { passive: false });
-        this.setState({ context: context, timer: setInterval(() => { this.makeBullet(); }, 201) });
+        var scoreTimer = setInterval(() => { this.setState({scoreTime : this.state.scoreTime + 1}) }, 1000);
+        this.setState({
+             context: context,
+             timer: setInterval(() => { this.makeBullet(); }, 201),
+             scoreTimer: scoreTimer
+             });
+
         requestAnimationFrame(() => { this.update() });
     }
     update = () => {
@@ -51,7 +63,7 @@ class Game extends Component {
                     this.delete(a);
                 }
                 if(hitchar){
-                    window.location.href = '/hide-game/';
+                    window.location.href = `/hide-game/endgame/${this.state.scoreTime}`;
                 }
             }
            
@@ -78,6 +90,9 @@ class Game extends Component {
                     height={this.state.screenHeight}
                     style={{ backgroundColor: "skyblue" }}
                 />
+                <div style={{width: '100%', height: '30px', backgroundColor: 'black', color: 'white'}}>
+                    score : {this.state.scoreTime}
+                </div>
             </div>
         );
     }
