@@ -7,7 +7,12 @@ class Bullet {
         this.bounceX = false;
         this.bounceY = false;
     }
-
+    hit(state) {
+        if (15 > Math.sqrt((state.x - this.x) * (state.x - this.x) + (state.y - this.y) * (state.y - this.y))) {
+            return true;
+        }
+        return false;
+    }
     moving() {
         var vx = this.speed * Math.cos(this.angle - (Math.PI / 2));
         var vy = this.speed * Math.sin(this.angle - (Math.PI / 2));

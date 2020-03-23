@@ -46,11 +46,15 @@ class Game extends Component {
             this.state.shootertank.render(this.state);
             for (var a = 0; a < this.state.bullet.length; a++) {
                 this.state.bullet[a].render(this.state);
+                var hitchar = this.state.bullet[a].hit(this.state);
                 if (this.state.bullet[a].y > this.state.screenHeight) {
                     this.delete(a);
                 }
+                if(hitchar){
+                    window.location.href = '/hide-game/';
+                }
             }
-            console.log(this.state.bullet);
+           
         }
         requestAnimationFrame(() => { this.update() });
     }
