@@ -24,7 +24,7 @@ class Game extends Component {
             ev.stopImmediatePropagation();
             var clientX = ev.touches[0].clientX;
             var clientY = ev.touches[0].clientY;
-            if (20 > Math.sqrt((this.state.x - clientX) * (this.state.x - clientX) + (this.state.y - clientY) * (this.state.y - clientY))) {
+            if (25 > Math.sqrt((this.state.x - clientX) * (this.state.x - clientX) + (this.state.y - clientY) * (this.state.y - clientY))) {
                 this.setState({ x: clientX, y: clientY });
             }
         }, { passive: false });
@@ -36,7 +36,7 @@ class Game extends Component {
             ev.preventDefault();
             ev.stopImmediatePropagation();
         }, { passive: false });
-        this.setState({ context: context, timer: setInterval(() => {this.makeBullet();}, 500) });
+        this.setState({ context: context, timer: setInterval(() => { this.makeBullet(); }, 201) });
         requestAnimationFrame(() => { this.update() });
     }
     update = () => {
@@ -46,12 +46,22 @@ class Game extends Component {
             this.state.shootertank.render(this.state);
             for (var a = 0; a < this.state.bullet.length; a++) {
                 this.state.bullet[a].render(this.state);
+                if (this.state.bullet[a].y > this.state.screenHeight) {
+                    this.delete(a);
+                }
             }
+            console.log(this.state.bullet);
         }
         requestAnimationFrame(() => { this.update() });
     }
+    delete = (number) => {
+        var refreshBullet = this.state.bullet.slice();
+        refreshBullet.splice(number, 1);
+        this.setState({
+            bullet: refreshBullet
+        })
+    }
     makeBullet = () => {
-        console.log(this.state.shootertank.degrees);
         var bullet = new Bullet(this.state.shootertank.degrees * Math.PI / 180);
         var joined = this.state.bullet.concat(bullet);
         this.setState({ bullet: joined });
