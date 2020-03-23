@@ -16,7 +16,7 @@ class MainChar {
         context.stroke();
         context.closePath();
         context.beginPath();
-        context.arc(0, -30, 12, 0, 2 * Math.PI);
+        context.arc(0, -40, 12, 0, 2 * Math.PI);
         context.fillStyle = "red";
         context.fill();
         context.closePath();
