@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f5b688f313cd1dfdeb893e8bc4ca8431",
+    "revision": "159e0d56de609d37ff0f2f5fc635287a",
     "url": "/hide-game/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hide-game/static/js/2.c489acd4.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d29874495ed291334f46",
-    "url": "/hide-game/static/js/main.97e23078.chunk.js"
+    "revision": "171f661f055bcfcf63d4",
+    "url": "/hide-game/static/js/main.72741979.chunk.js"
   },
   {
     "revision": "a6ff591a26d035a69541",

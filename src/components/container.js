@@ -92,7 +92,6 @@ class Game extends Component {
             shootertank: new Shooter(),
             bullet: [],
             timer: null,
-            scoreTime: 0,
             scoreTimer: null,
         })
     }
