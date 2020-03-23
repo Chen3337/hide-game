@@ -26,7 +26,7 @@ class Game extends Component {
             ev.stopImmediatePropagation();
             var clientX = ev.touches[0].clientX;
             var clientY = ev.touches[0].clientY;
-            if(clientY > this.state.screenHeight || clientY < 0 || clientX > this.state.screenWidth || clientX < 20){
+            if(clientY > this.state.screenHeight || clientY < 30 || clientX > this.state.screenWidth || clientX < 0){
             }
             else{
                 if (25 > Math.sqrt((this.state.x - clientX) * (this.state.x - clientX) + (this.state.y - clientY) * (this.state.y - clientY))) {
@@ -90,7 +90,7 @@ class Game extends Component {
                     height={this.state.screenHeight}
                     style={{ backgroundColor: "skyblue" }}
                 />
-                <div style={{width: '100%', height: '30px', backgroundColor: 'black', color: 'white'}}>
+                <div style={{width: '100%', height: '30px', backgroundColor: 'black', color: 'white', textAlign: 'center'}}>
                     score : {this.state.scoreTime}
                 </div>
             </div>
