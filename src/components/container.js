@@ -36,7 +36,7 @@ class Game extends Component {
             ev.preventDefault();
             ev.stopImmediatePropagation();
         }, { passive: false });
-        this.setState({ context: context, timer: setInterval(() => {this.makeBullet();}, 1000) });
+        this.setState({ context: context, timer: setInterval(() => {this.makeBullet();}, 500) });
         requestAnimationFrame(() => { this.update() });
     }
     update = () => {
