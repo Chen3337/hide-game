@@ -7,7 +7,7 @@ function App() {
     <Router>
         <Switch>
           <Route exact path='/hide-game/' component={Manu} />
-          <Route exact path='/hide-game/game' component={Game} />
+          <Route exact path='/hide-game/game/' component={Game} />
         </Switch>
     </Router>
   );
