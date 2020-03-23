@@ -63,6 +63,7 @@ class Game extends Component {
                     this.delete(a);
                 }
                 if(hitchar){
+                    this.endgame();
                     window.location.href = `/hide-game/endgame/${this.state.scoreTime}`;
                 }
             }
@@ -82,7 +83,7 @@ class Game extends Component {
         var joined = this.state.bullet.concat(bullet);
         this.setState({ bullet: joined });
     }
-    componentWillUnmount() {
+    endgame = () => {
         this.setState({
             context: null,
             x: window.innerWidth / 2,
