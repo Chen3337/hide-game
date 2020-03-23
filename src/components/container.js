@@ -26,7 +26,7 @@ class Game extends Component {
             ev.stopImmediatePropagation();
             var clientX = ev.touches[0].clientX;
             var clientY = ev.touches[0].clientY;
-            if(clientY > this.state.screenHeight || clientY < 0 || clientX > this.state.screenWidth || clientX < 0){
+            if(clientY > this.state.screenHeight || clientY < 0 || clientX > this.state.screenWidth || clientX < 20){
             }
             else{
                 if (25 > Math.sqrt((this.state.x - clientX) * (this.state.x - clientX) + (this.state.y - clientY) * (this.state.y - clientY))) {
