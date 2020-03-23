@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/hide-game/static/js/main.89f962ee.chunk.js",
-    "main.js.map": "/hide-game/static/js/main.89f962ee.chunk.js.map",
+    "main.js": "/hide-game/static/js/main.4437fbd3.chunk.js",
+    "main.js.map": "/hide-game/static/js/main.4437fbd3.chunk.js.map",
     "runtime-main.js": "/hide-game/static/js/runtime-main.d6c25612.js",
     "runtime-main.js.map": "/hide-game/static/js/runtime-main.d6c25612.js.map",
     "static/js/2.c489acd4.chunk.js": "/hide-game/static/js/2.c489acd4.chunk.js",
     "static/js/2.c489acd4.chunk.js.map": "/hide-game/static/js/2.c489acd4.chunk.js.map",
     "index.html": "/hide-game/index.html",
-    "precache-manifest.d51e6a0aeb878b750cf4b55d482d7e35.js": "/hide-game/precache-manifest.d51e6a0aeb878b750cf4b55d482d7e35.js",
+    "precache-manifest.e65aba337811c75b524d76f3a45b4045.js": "/hide-game/precache-manifest.e65aba337811c75b524d76f3a45b4045.js",
     "service-worker.js": "/hide-game/service-worker.js",
     "static/js/2.c489acd4.chunk.js.LICENSE.txt": "/hide-game/static/js/2.c489acd4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d6c25612.js",
     "static/js/2.c489acd4.chunk.js",
-    "static/js/main.89f962ee.chunk.js"
+    "static/js/main.4437fbd3.chunk.js"
   ]
 }
