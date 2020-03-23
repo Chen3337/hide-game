@@ -9,8 +9,8 @@ function App() {
         <Switch>
           <Route exact path='/hide-game/' component={Manu} />
           <Route exact path='/hide-game/game/' component={Game} />
-          <Route exact path='/hide-game/endgame/:score' component={Score} />
-          <Route path='*' component={Manu} />
+          <Route path='/hide-game/endgame/:score' component={Score} />
+          <Route component={Manu} />
         </Switch>
     </Router>
   );
