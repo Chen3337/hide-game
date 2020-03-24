@@ -16,7 +16,7 @@ class Bullet {
     moving() {
         var vx = this.speed * Math.cos(this.angle - (Math.PI / 2));
         var vy = this.speed * Math.sin(this.angle - (Math.PI / 2));
-        this.speed = 3;
+        this.speed = 2;
         if(this.bounceX){
             this.x -= vx;
         }else{
